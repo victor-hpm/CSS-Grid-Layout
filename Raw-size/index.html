@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tamaño de item en filas</title>
+    <style>
+        body {
+            font-family: Arial;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-template-rows: repeat(2, 200px);
+            height: 100vh;
+            grid-gap: 5px;
+        }
+        
+        .item {
+            background: aqua;
+            padding: 10px;
+            border: 1px solid black;
+        }
+        
+        .item:nth-of-type(1) {
+            grid-column: 1/ span 3;
+            /* grid-column: 1/ span 3; linea en la que arranca/espacios ocupados */
+            grid-row: 1/span 2;
+        }
+        
+        .item:nth-of-type(2) {
+            grid-column: 4/ span 2;
+            grid-row: 1/span 2;
+        }
+        
+        .item:nth-of-type(3) {
+            grid-column: 6/ span 2;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- para generar esto se usa el comando
+.item{contenido #$}*12, #para que sean consecutivos los numeros-->
+    <section class="container">
+        <div class="item">item #1</div>
+        <div class="item">item #2</div>
+        <div class="item">item #3</div>
+        <div class="item">item #4</div>
+        <div class="item">item #5</div>
+
+        <!-- para que funcione grid-template-areas:
+        1ro debemos poner una clase independiente a cada item
+        2do poner clases para todos (estilo para cada clase) dentro de style
+        3ro ocupar grid area para decirles a cada espacio de mi contenido
+        que area ocupar (propiedad aplicada a los hijos de un grid
+        container (grid item)) y gracias a que en grid-temple-areas se repitenpalabras 
+        para las columnas y filas se unen los espacios si es que es la misma palabra o area-->
+    </section>
+</body>
+
+</html>

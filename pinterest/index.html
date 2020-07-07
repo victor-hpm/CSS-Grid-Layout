@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pinterest</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 250px);
+            /* auto-fill para que se responsive y se llenen los 
+            elementos para que cuando la pag se haga mas grande o pequeña
+            los elemento se distribullan */
+            grid-gap: 5px;
+            justify-content: center;
+        }
+        
+        .item {
+            border-radius: 5px;
+            padding: 10px;
+            background: #f2f2f2
+        }
+        
+        .item img {
+            max-width: 100%;
+            /* ancho maximo del 100% de su contenedor para que se responsive */
+        }
+        /* para darle tañamos a cada imagen y que se repitan
+        tenemo que darle una clase espcifica a cada imagen
+        con level-# */
+        
+        .level-1 {
+            grid-row-end: span 3;
+            /* grid-row-end: solo este para que su inicio se adinamico 
+          y lo desida por el propio grid, no configurar el grid-row-start*/
+        }
+        
+        .level-2 {
+            grid-row-end: span 2;
+        }
+        
+        .level-3 {
+            grid-row-end: span 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item level-1">
+            <img src="landing.jpg" alt="">
+        </div>
+        <div class="item level-2">
+            <img src="tshirt.jpg" alt="">
+        </div>
+        <div class="item level-3">
+            <img src="house.jpg" alt="">
+        </div>
+        <div class="item level-1">
+            <img src="landing.jpg" alt="">
+        </div>
+        <div class="item level-2">
+            <img src="tshirt.jpg" alt="">
+        </div>
+        <div class="item level-3">
+            <img src="house.jpg" alt="">
+        </div>
+        <div class="item level-1">
+            <img src="landing.jpg" alt="">
+        </div>
+        <div class="item level-2">
+            <img src="tshirt.jpg" alt="">
+        </div>
+        <div class="item level-3">
+            <img src="house.jpg" alt="">
+        </div>
+        <div class="item level-1">
+            <img src="landing.jpg" alt="">
+        </div>
+        <div class="item level-2">
+            <img src="tshirt.jpg" alt="">
+        </div>
+        <div class="item level-3">
+            <img src="house.jpg" alt="">
+        </div>
+        <div class="item level-1">
+            <img src="landing.jpg" alt="">
+        </div>
+        <div class="item level-2">
+            <img src="tshirt.jpg" alt="">
+        </div>
+        <div class="item level-3">
+            <img src="house.jpg" alt="">
+        </div>
+    </div>
+</body>
+
+</html>

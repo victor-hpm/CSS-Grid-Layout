@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Instagram</title>
+
+    <!-- CSS -->
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        /* para darle el estilo final ya agregadas las 9 imagenes 
+        le damos estilo al padre de todos el cual es el post-list */
+        
+        .post-list {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(100px, 293px));
+            justify-content: center;
+            grid-gap: 28px;
+        }
+        
+        .post {
+            cursor: pointer;
+            position: relative;
+            display: block;
+            /* por se ancla tiene display inline y lo tenemos que cambiar */
+        }
+        
+        .post-image {
+            margin: 0;
+        }
+        
+        .post-image img {
+            width: 100%;
+            /* mismo que tendra el post */
+            vertical-align: top;
+            /* ayuda a un margen que sale abajo cuando no le ponemos vertical align de ningun tipo  */
+        }
+        
+        .post-overlay {
+            background: rgba(0, 0, 0, .4);
+            /* rgba a de alfa la transparencia */
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            /* que tome todo el espacio que tenga su padre o contenedor mas 
+            cercano que tenga posicion relativa, el cual es el post y tenemos que ponerle
+            el position: relative; */
+            display: none;
+            /* no se va a ver po defecto por eso ponemos un display none */
+            align-items: center;
+            /* para centrar los demas elementos  */
+            justify-content: center;
+            /* para centrar los demas elementos  */
+            color: white;
+            text-align: center;
+            /* centrar los textos */
+        }
+        
+        .post:hover .post-overlay {
+            display: flex;
+            /* para posicionar otros elementos */
+        }
+        
+        .post-likes,
+        .post-coments {
+            width: 80px;
+            margin: 5px;
+            font-weight: bold;
+            display: inline-block;
+        }
+        /* RESponsive */
+        
+        @media screen and (max-width:768px) {
+            .post-list {
+                grid-gap: 3px;
+            }
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="post-list">
+        <!-- .post-list  -->
+        <a href="" class="post">
+            <!-- a.post -- cuadradito, es donde empiezan las imagenes-->
+            <figure class="post-image">
+                <!--figure.post-image--- componentes -->
+                <img src="1.jpg" alt="1">
+            </figure>
+            <div class="post-overlay">
+                <!-- .post-overlay-es la cajita cuando muestra los likes y comentarios-->
+                <p>
+                    <span class="post-likes">150</span>
+                    <!-- span.post-likes -->
+                    <span class="post-coments">50</span>
+                    <!-- span.post-coments -->
+                </p>
+            </div>
+        </a>
+        <a href="" class="post">
+            <!-- a.post -- cuadradito, es donde empiezan las imagenes-->
+            <figure class="post-image">
+                <!--figure.post-image--- componentes -->
+                <img src="2.jpg" alt="2">
+            </figure>
+            <div class="post-overlay">
+                <!-- .post-overlay-es la cajita cuando muestra los likes y comentarios-->
+                <p>
+                    <span class="post-likes">150</span>
+                    <!-- span.post-likes -->
+                    <span class="post-coments">50</span>
+                    <!-- span.post-coments -->
+                </p>
+            </div>
+        </a>
+        <a href="" class="post">
+            <!-- a.post -- cuadradito, es donde empiezan las imagenes-->
+            <figure class="post-image">
+                <!--figure.post-image--- componentes -->
+                <img src="3.jpg" alt="3">
+            </figure>
+            <div class="post-overlay">
+                <!-- .post-overlay-es la cajita cuando muestra los likes y comentarios-->
+                <p>
+                    <span class="post-likes">150</span>
+                    <!-- span.post-likes -->
+                    <span class="post-coments">50</span>
+                    <!-- span.post-coments -->
+                </p>
+            </div>
+        </a>
+        <a href="" class="post">
+            <!-- a.post -- cuadradito, es donde empiezan las imagenes-->
+            <figure class="post-image">
+                <!--figure.post-image--- componentes -->
+                <img src="4.jpg" alt="4">
+            </figure>
+            <div class="post-overlay">
+                <!-- .post-overlay-es la cajita cuando muestra los likes y comentarios-->
+                <p>
+                    <span class="post-likes">150</span>
+                    <!-- span.post-likes -->
+                    <span class="post-coments">50</span>
+                    <!-- span.post-coments -->
+                </p>
+            </div>
+        </a>
+        <a href="" class="post">
+            <!-- a.post -- cuadradito, es donde empiezan las imagenes-->
+            <figure class="post-image">
+                <!--figure.post-image--- componentes -->
+                <img src="5.jpg" alt="5">
+            </figure>
+            <div class="post-overlay">
+                <!-- .post-overlay-es la cajita cuando muestra los likes y comentarios-->
+                <p>
+                    <span class="post-likes">150</span>
+                    <!-- span.post-likes -->
+                    <span class="post-coments">50</span>
+                    <!-- span.post-coments -->
+                </p>
+            </div>
+        </a>
+        <a href="" class="post">
+            <!-- a.post -- cuadradito, es donde empiezan las imagenes-->
+            <figure class="post-image">
+                <!--figure.post-image--- componentes -->
+                <img src="6.jpg" alt="6">
+            </figure>
+            <div class="post-overlay">
+                <!-- .post-overlay-es la cajita cuando muestra los likes y comentarios-->
+                <p>
+                    <span class="post-likes">150</span>
+                    <!-- span.post-likes -->
+                    <span class="post-coments">50</span>
+                    <!-- span.post-coments -->
+                </p>
+            </div>
+        </a>
+        <a href="" class="post">
+            <!-- a.post -- cuadradito, es donde empiezan las imagenes-->
+            <figure class="post-image">
+                <!--figure.post-image--- componentes -->
+                <img src="7.jpg" alt=7 ">
+            </figure>
+            <div class="post-overlay ">
+                <!-- .post-overlay-es la cajita cuando muestra los likes y comentarios-->
+                <p>
+                    <span class="post-likes ">150</span>
+                    <!-- span.post-likes -->
+                    <span class="post-coments ">50</span>
+                    <!-- span.post-coments -->
+                </p>
+            </div>
+        </a>
+        <a href=" " class="post ">
+            <!-- a.post -- cuadradito, es donde empiezan las imagenes-->
+            <figure class="post-image ">
+                <!--figure.post-image--- componentes -->
+                <img src="8.jpg " alt="8 ">
+            </figure>
+            <div class="post-overlay ">
+                <!-- .post-overlay-es la cajita cuando muestra los likes y comentarios-->
+                <p>
+                    <span class="post-likes ">150</span>
+                    <!-- span.post-likes -->
+                    <span class="post-coments ">50</span>
+                    <!-- span.post-coments -->
+                </p>
+            </div>
+        </a>
+        <a href=" " class="post ">
+            <!-- a.post -- cuadradito, es donde empiezan las imagenes-->
+            <figure class="post-image ">
+                <!--figure.post-image--- componentes -->
+                <img src="9.jpg " alt="9 ">
+            </figure>
+            <div class="post-overlay ">
+                <!-- .post-overlay-es la cajita cuando muestra los likes y comentarios-->
+                <p>
+                    <span class="post-likes ">150</span>
+                    <!-- span.post-likes -->
+                    <span class="post-coments ">50</span>
+                    <!-- span.post-coments -->
+                </p>
+            </div>
+        </a>
+    </div>
+</body>
+
+</html>

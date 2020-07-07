@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Displays</title>
+    <style>
+        body {
+            font-family: Arial;
+        }
+        
+        .container {
+            display: grid;
+            /* grid-template-columns: 25% 200px 25%; */
+            /* grid-template-columns: c1 y tamaño1 c2 y tamaño2 cN y T2  */
+            /* grid-template-columns: se puede hacer dinamico con 25% 50% 20% variando  */
+            /* grid-template-rows: 300px 300px;
+            grid-template-rows: filas=rows , dentro del grid tendremos un grid explicito
+            y un grid implicito  DESPUES mejor usamos solo grid template*/
+            grid-template: 300px 100px 100px / 50% 200px 100px;
+            /* grid-template: filas / columnas; MANERA EXPLICITA */
+        }
+        
+        .item {
+            background: aqua;
+            padding: 10px;
+            border: 1px solid black;
+        }
+        
+        .item:nth-of-type(4) {
+            /* pseudo clase de css, va a tomar un 
+            elemento de ellipsetipo de tipo item 
+            , despues ya dentro del elemento
+            podemos poner otros hijos*/
+            background: blue;
+            overflow: auto;
+            /* overflow: auto; se obtiene la caracteristica
+            de poder hacer un scroll dendro del item 4 */
+            display: grid;
+            /* display: subgrid; */
+            /* display: subgrid; tendria que heredar el 
+            grid padre heredaria las caracteristicas del grid
+            original (padre)  (por ahora y en lo que fuenciona
+            usaremos grid-template y display grid)*/
+            grid-template: 50px 50px 50px / 200px 200px 200px;
+        }
+        
+        .item .item {
+            /* dando un estilo al item dentro del item */
+            background: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- para generar esto se usa el comando
+.item{contenido #$}*12, #para que sean consecutivos los numeros-->
+    <section class="container">
+        <div class="item">contenido #1</div>
+        <div class="item">contenido #2</div>
+        <div class="item">contenido #3</div>
+        <div class="item">
+            <div class="item">Subitem #1</div>
+            <div class="item">Subitem #2</div>
+            <div class="item">Subitem #3</div>
+            <div class="item">Subitem #4</div>
+            <div class="item">Subitem #5</div>
+        </div>
+        <div class="item">contenido #5</div>
+        <div class="item">contenido #6</div>
+        <div class="item">contenido #7</div>
+        <div class="item">contenido #8</div>
+        <div class="item">contenido #9</div>
+        <div class="item">contenido #10</div>
+        <div class="item">contenido #11</div>
+        <div class="item">contenido #12</div>
+    </section>
+</body>
+
+</html>

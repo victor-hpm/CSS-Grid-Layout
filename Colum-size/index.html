@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tamaño de item en columnas</title>
+    <style>
+        body {
+            font-family: Arial;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            grid-gap: 10px;
+            height: 100vh;
+        }
+        
+        .item {
+            background: aqua;
+            padding: 10px;
+            border: 1px solid black;
+        }
+        
+        .item:nth-of-type(1) {
+            background: blue;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            /* ocupe uno y dos espacios diceindole donde empieza y donde termina */
+        }
+        
+        .item:nth-of-type(8) {
+            /* grid-column: 1 / span 2; */
+            /* grid-column: arranca / span 2 ; span # de 
+            columnas que va a tomar */
+            grid-column: 1/-1;
+            /* grid-column: 1/-1; avarca todo y sirve cuendo agregas mas
+            columnas, para que el cambio sea automatico */
+        }
+        
+        .item:nth-of-type(7) {
+            grid-column: 2 / 4;
+            /* grid-column: #arranca / #termina; (resumido)# de linea  */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- para generar esto se usa el comando
+.item{contenido #$}*12, #para que sean consecutivos los numeros-->
+    <section class="container">
+        <div class="item">item #1</div>
+        <div class="item">item #2</div>
+        <div class="item">item #3</div>
+        <div class="item">item #4</div>
+        <div class="item">item #5</div>
+        <div class="item">item #6</div>
+        <div class="item">item #7</div>
+        <div class="item">item #8</div>
+        <div class="item">item #9</div>
+        <div class="item">item #10</div>
+        <div class="item">item #11</div>
+        <div class="item">item #12</div>
+        <!-- para que funcione grid-template-areas:
+        1ro debemos poner una clase independiente a cada item
+        2do poner clases para todos (estilo para cada clase) dentro de style
+        3ro ocupar grid area para decirles a cada espacio de mi contenido
+        que area ocupar (propiedad aplicada a los hijos de un grid
+        container (grid item)) y gracias a que en grid-temple-areas se repitenpalabras 
+        para las columnas y filas se unen los espacios si es que es la misma palabra o area-->
+    </section>
+</body>
+
+</html>
